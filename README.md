@@ -79,76 +79,103 @@ Coming soon...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Getting Started with Create React App
+<!-- GETTING STARTED -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 💻 Getting Started <a name="getting-started"></a>
 
-## Available Scripts
+To get a local copy up and running follow these simple example steps.
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+In order to run this project you need:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Stylelint
+- ESLint
+- Node JS
+- Node package Manager (NPM) OR Yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Install
 
-### `npm test`
+Follow the link below to install Node JS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node JS](https://nodejs.org/en/)
 
-### `npm run build`
+Follow the link below to install NPM
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow the link below to install Yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
 
-### `npm run eject`
+Once you have installed Node JS and NPM or Yarn, install the following packages globally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+  npm install -g stylelint
+  npm install -g eslint
+  npm install -g webpack
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+OR if on Yarn,
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+  yarn global add stylelint
+  yarn global add eslint
+  yarn global add webpack
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+However, whilst everything is included in the package.json file, you can simply run:
 
-## Learn More
+```sh
+  npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+OR if on Yarn,
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+  yarn install
+```
 
-### Code Splitting
+Don't know how to use Package Managers? Check out the [Beginner's Guide](https://www.sitepoint.com/yarn-vs-npm/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Setup
 
-### Analyzing the Bundle Size
+Clone this repository to your desired folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+  cd my-folder
+  git clone https://github.com/10-menachi/calculator.git
+```
 
-### Making a Progressive Web App
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To run the project:
 
-### Advanced Configuration
+```sh
+  cd calculator
+  npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+OR if on Yarn,
 
-### Deployment
+```sh
+  cd todo-list
+  yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The website is hosted on localhost:3000 by default. <br />
 
-### `npm run build` fails to minify
+To change the port to the port of your choice, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+  npm run start -- --port=YOUR_PORT
+```
+
+Wanna learn more about React? Check out the [React Documentation](https://reactjs.org/docs/getting-started.html)
+
+### Run tests
+
+There are no tests for this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
