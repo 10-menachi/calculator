@@ -3,101 +3,98 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './Keys.css';
 
-const Keys = ({ handleButtonClick }) => (
-  <div>
-    <div className="row">
-      <button type="button" onClick={() => handleButtonClick('AC')}>
-        AC
-      </button>
-      <button type="button" onClick={() => handleButtonClick('+/-')}>
-        +/-
-      </button>
-      <button type="button" onClick={() => handleButtonClick('%')}>
-        %
-      </button>
-      <button
-        type="button"
-        className="far-right"
-        onClick={() => handleButtonClick('÷')}
-      >
-        ÷
-      </button>
+const Keys = ({ handleButtonClick }) => {
+  const rows = {
+    row1: ['AC', '+/-', '%', '÷'],
+    row2: ['7', '8', '9', 'x'],
+    row3: ['4', '5', '6', '-'],
+    row4: ['1', '2', '3', '+'],
+    row5: ['0', '.', '='],
+  };
+  return (
+    <div>
+      <div className="row">
+        {rows.row1.map((item, index) => (
+          <button
+            type="button"
+            key={item}
+            onClick={(e) => {
+              handleButtonClick(e.target.textContent);
+            }}
+            className={index === rows.row1.length - 1 ? 'far-right' : null}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+      <div className="row">
+        {rows.row2.map((item, index) => (
+          <button
+            type="button"
+            key={item}
+            onClick={(e) => {
+              handleButtonClick(e.target.textContent);
+            }}
+            className={index === rows.row2.length - 1 ? 'far-right' : null}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+      <div className="row">
+        {rows.row3.map((item, index) => (
+          <button
+            type="button"
+            key={item}
+            onClick={(e) => {
+              handleButtonClick(e.target.textContent);
+            }}
+            className={index === rows.row3.length - 1 ? 'far-right' : null}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+      <div className="row">
+        {rows.row4.map((item, index) => (
+          <button
+            type="button"
+            key={item}
+            onClick={(e) => {
+              handleButtonClick(e.target.textContent);
+            }}
+            className={index === rows.row4.length - 1 ? 'far-right' : null}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+      <div className="row">
+        {rows.row5.map((item, index) => {
+          let classNames = '';
+          if (index === rows.row5.length - 1) {
+            classNames = 'far-right';
+          }
+          if (item === '0') {
+            classNames += ' double-span';
+          }
+          return (
+            <button
+              type="button"
+              key={item}
+              onClick={(e) => {
+                handleButtonClick(e.target.textContent);
+              }}
+              className={classNames}
+            >
+              {item}
+            </button>
+          );
+        })}
+      </div>
     </div>
-    <div className="row">
-      <button type="button" onClick={() => handleButtonClick('7')}>
-        7
-      </button>
-      <button type="button" onClick={() => handleButtonClick('8')}>
-        8
-      </button>
-      <button type="button" onClick={() => handleButtonClick('9')}>
-        9
-      </button>
-      <button
-        type="button"
-        className="far-right"
-        onClick={() => handleButtonClick('x')}
-      >
-        X
-      </button>
-    </div>
-    <div className="row">
-      <button type="button" onClick={() => handleButtonClick('4')}>
-        4
-      </button>
-      <button type="button" onClick={() => handleButtonClick('5')}>
-        5
-      </button>
-      <button type="button" onClick={() => handleButtonClick('6')}>
-        6
-      </button>
-      <button
-        type="button"
-        className="far-right"
-        onClick={() => handleButtonClick('-')}
-      >
-        -
-      </button>
-    </div>
-    <div className="row">
-      <button type="button" onClick={() => handleButtonClick('1')}>
-        1
-      </button>
-      <button type="button" onClick={() => handleButtonClick('2')}>
-        2
-      </button>
-      <button type="button" onClick={() => handleButtonClick('3')}>
-        3
-      </button>
-      <button
-        type="button"
-        className="far-right"
-        onClick={() => handleButtonClick('+')}
-      >
-        +
-      </button>
-    </div>
-    <div className="row">
-      <button
-        type="button"
-        className="double-span"
-        onClick={() => handleButtonClick('0')}
-      >
-        0
-      </button>
-      <button type="button" onClick={() => handleButtonClick('.')}>
-        .
-      </button>
-      <button
-        type="button"
-        className="far-right"
-        onClick={() => handleButtonClick('=')}
-      >
-        =
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 Keys.propTypes = {
   handleButtonClick: PropTypes.func.isRequired,
