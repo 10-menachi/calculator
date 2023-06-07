@@ -1,7 +1,8 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 import React from 'react';
 import './Keys.css';
 
-// eslint-disable-next-line react/prop-types
 const Keys = ({ handleButtonClick }) => (
   <div>
     <div className="row">
@@ -91,5 +92,9 @@ const Keys = ({ handleButtonClick }) => (
     </div>
   </div>
 );
+
+Keys.propTypes = {
+  handleButtonClick: PropTypes.func.isRequired,
+};
 
 export default Keys;
