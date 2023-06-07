@@ -1,8 +1,9 @@
 import './Calculations.css';
 
-const Calculations = () => (
+// eslint-disable-next-line react/prop-types
+const Calculations = ({ res }) => (
   <div className="pallete">
-    <h2>0</h2>
+    <h2>{res}</h2>
   </div>
 );
 
