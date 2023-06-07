@@ -42,9 +42,15 @@ const Keys = ({ handleButtonClick }) => (
       </button>
     </div>
     <div className="row">
-      <button type="button">4</button>
-      <button type="button">5</button>
-      <button type="button">6</button>
+      <button type="button" onClick={() => handleButtonClick('4')}>
+        4
+      </button>
+      <button type="button" onClick={() => handleButtonClick('5')}>
+        5
+      </button>
+      <button type="button" onClick={() => handleButtonClick('6')}>
+        6
+      </button>
       <button
         type="button"
         className="far-right"
