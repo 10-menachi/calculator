@@ -27,16 +27,26 @@ const Quote = () => {
   }, []);
 
   if (!quote) {
-    return <div>Loading...</div>;
+    return (
+      <div className="quote">
+        <h1>Loading...</h1>
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Oops! Something went wrong!</div>;
+    return (
+      <div className="quote">
+        <h1>Oops! Something went wrong!</h1>
+      </div>
+    );
   }
   return (
     <div className="quote">
       <h1>
-        {quote} - {author}
+        {quote}
+        -
+        {author}
       </h1>
     </div>
   );
