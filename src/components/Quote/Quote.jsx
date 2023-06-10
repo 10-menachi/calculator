@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Quote.css';
 
 const Quote = () => {
   const [quote, setQuote] = useState(null);
@@ -7,22 +8,23 @@ const Quote = () => {
   const apiKey = 't7NPmfG79NvtQx1LkBKMYA==y9g5hL38XGJ9q69P';
   const url = 'https://api.api-ninjas.com/v1/quotes';
 
-  const getQuote = () => {
-    fetch(url, {
-      headers: {
-        'X-Api-Key': apiKey,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
+  useEffect(() => {
+    const getQuote = async () => {
+      try {
+        const response = await fetch(url, {
+          headers: {
+            'X-Api-Key': apiKey,
+          },
+        });
+        const data = await response.json();
         setQuote(data[0].quote);
         setAuthor(data[0].author);
-      })
-      .catch((error) => {
+      } catch (error) {
         setError(error);
-      });
-  };
-  useEffect(getQuote, []);
+      }
+    };
+    getQuote();
+  }, []);
 
   if (!quote) {
     return <div>Loading...</div>;
@@ -31,11 +33,11 @@ const Quote = () => {
   if (error) {
     return <div>Oops! Something went wrong!</div>;
   }
-
   return (
-    <div>
-      <h1>{quote}</h1>
-      <h1>{author}</h1>
+    <div className="quote">
+      <h1>
+        {quote} - {author}
+      </h1>
     </div>
   );
 };
