@@ -17,10 +17,13 @@ const Calculator = () => {
   };
   const res = data.next || data.total || '0';
   return (
-    <div className="calculator">
-      <Calculations res={res} />
-      <div className="keys">
-        <Keys handleButtonClick={handleClick} />
+    <div className="base-div">
+      <p className="title">Let&apos;s do some math!</p>
+      <div className="calculator">
+        <Calculations res={res} />
+        <div className="keys">
+          <Keys handleButtonClick={handleClick} />
+        </div>
       </div>
     </div>
   );
